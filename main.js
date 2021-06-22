@@ -11,10 +11,11 @@ class CountdownTimer {
         setIntervalId = setInterval(() => {
           
              const dateStar = new Date().getTime()
-            const deltaTime = this.date - dateStar
+            const deltaTime = this.date.date - dateStar
+            
             const deltaTimeObj = this.getTimeComponents(deltaTime);
             this.updateTime(deltaTimeObj)
-            
+          
             if (deltaTime < 0) {
                 const links = this.takeslinks()
                 clearInterval(setIntervalId)
@@ -48,9 +49,9 @@ class CountdownTimer {
         const links = this.takeslinks()
         
       
-        links.days.textContent = `${object.days}`;
-        links.hours.textContent = `${object.hours}`;
-        links.mins.textContent = `${object.mins}`;
+       links.days.textContent = `${object.days}`,
+        links.hours.textContent = `${object.hours}`,
+        links.mins.textContent = `${object.mins}`,
         links.secs.textContent = `${object.secs}`
 }
 }
@@ -61,37 +62,4 @@ const timer = new CountdownTimer({
 })
 console.log(timer.start());
 
-// function updateTime(object) {
-//         const links = this.takeslinks()
-//         console.log(links);
-      
-//         links.days.textContent = `${object.days}`;
-//         links.hours.textContent = `${object.hours}`;
-//         links.mins.textContent = `${object.mins}`;
-//         links.secs.textContent = `${object.secs}`
-// }
-// function takeslinks() {
-//     return ({
-//         days: document.querySelector('span[data-value="days"]'),
-//         hours: document.querySelector('span[data-value="hours"]'),
-//         mins: document.querySelector('span[data-value="mins"]'),
-//         secs: document.querySelector('span[data-value="secs"]'),
-//         label: document.querySelectorAll('.label')
-//     })
-// }
-
-//      function getTimeComponents(time) {
-//     const days = this.pad(Math.floor(time / (1000 * 60 * 60 * 24)));
-//     const hours = this.pad(Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
-//     const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
-//     const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
-//     return { days, hours, mins, secs }
-// }
-// function pad(value) {
-//     return String(value).padStart(2, '0')
-//     }
-
-// console.log(takeslinks());
-
-// const obj = (getTimeComponents(60000000000))
-// console.log(updateTime(obj));
+            
